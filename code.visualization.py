@@ -19,9 +19,9 @@ plt.title('Nested vs Not Nested')
 plt.show()
 '''
 #Streamlit integration code
-import matplotlib.pyplot as plt
 import streamlit as st
 import numpy as np
+import matplotlib.pyplot as plt
 # Data
 categories = ['has_nested', 'not_nested']
 values = [2660, 214]
