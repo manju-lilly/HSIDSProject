@@ -1,5 +1,12 @@
 import json
 import os
+#Streamlit integration code
+import streamlit as st
+import numpy as np
+import matplotlib.pyplot as plt
+# Data
+categories = ['has_nested', 'not_nested']
+values = [2660, 214]
 
 def analyze_json(file_path):
     global hasnested, notnested  # Declare global variables
@@ -40,3 +47,29 @@ if os.path.isdir(folder_path):
 else:
     print(f"The folder '{folder_path}' does not exist.")
 
+
+# Function to create the bar graph
+def create_bar_graph():
+    # Plotting the bar graph
+    plt.bar(categories, values)
+
+    # Adding labels and titles
+    plt.xlabel('Category')
+    plt.ylabel('Count')
+    plt.title('Nested vs Not Nested')
+
+    # Returning the figure for Streamlit to display
+    return plt
+
+# Streamlit app code
+def main():
+    st.title('Bar Graph Example')
+    
+    # Create the bar graph using the defined function
+    fig = create_bar_graph()
+
+    # Display the graph using Streamlit
+    st.pyplot(fig)
+
+if __name__ == '__main__':
+    main()
