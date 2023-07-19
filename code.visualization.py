@@ -21,6 +21,7 @@ plt.show()
 #Streamlit integration code
 import streamlit as st
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 # Data
 categories = ['has_nested', 'not_nested']
